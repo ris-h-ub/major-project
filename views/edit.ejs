@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h3> Edit</h3>
+    <form method="post" action="/listings/<%=listingss._id%>?_method=put" novalidate class="needs-validation">
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+       
+        <input val="listingss.title" name="title" class="form-control" required/>
+        <div class="valid-feedback">Title looks good</div>
+        <div class="invalid-feedback">Please enter valid title</div>
+        </div>
+        <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="description" class="form-control" required>listingss.description</textarea>
+        <div class="valid-feedback">Description  looks good</div>
+        <div class="invalid-feedback">Please enter valid description</div>
+        </div>
+        <div class="mb-3">
+        <label class="form-label" for="price">price</label>
+        <input  name="price"val="listingss.price" required class="form-control"/>
+        <div class="valid-feedback">Price  looks good</div>
+        <div class="invalid-feedback">Please enter valid price.</div>
+        </div>
+        <div class="mb-3">
+            Original Listing Image<br/>
+            <img src="<%=originalImageUrl%>"/>
+            </div>
+        <div class="mb-3">
+        <label class="form-label" for="image">Image</label>
+        <input name="Image" type="file" class="form-control"/>
+        </div>
+        <div class="mb-3">
+        <label class="form-label" for="location">Location </label>
+        <input name=" location" val="listingss.location" required class="form-control"/>
+        <div class="valid-feedback">Location looks good</div>
+        <div class="invalid-feedback">Please enter valid location.</div>
+        </div>
+        <div>
+        <label for="country" class="form-label">Country</label>
+        <input name="country" val="listingss.country" required class="form-control"/>
+        <div class="valid-feedback">Country looks good</div>
+        <div class="invalid-feedback">Please enter valid country.</div>
+        </div>
+        <br/><br/>
+        <button>Edit</button>
+    </form>
+    <script src="js/script.js"></script>
+</body>
+</html>
